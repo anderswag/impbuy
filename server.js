@@ -25,21 +25,9 @@ const opHelper = new OperationHelper({
     locale: 'CA'
 });
 
-//Query
-opHelper.execute('ItemSearch', {
-  'SearchIndex': 'Books',
-  'Keywords': 'harry potter',
-  'ResponseGroup': 'ItemAttributes,Offers,Images'
-}).then((response) => {
-    console.log("Results object: ", response.result.ItemSearchResponse.Items.Item[0].ImageSets.ImageSet[0].LargeImage);
-    // console.log("Raw response body: ", response.responseBody);
-}).catch((err) => {
-    console.error("Something went wrong! ", err);
-});
-
 
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/users");
+const getitemRoutes = require("./routes/getitems");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -59,7 +47,7 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
-// app.use("/api/users", usersRoutes(knex));
+app.use("/api/getitems", getitemRoutes(opHelper));
 
 // Home page
 app.get("/", (req, res) => {
