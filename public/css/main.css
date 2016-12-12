@@ -1,0 +1,82 @@
+@font-face {
+    font-family: fibon;
+    src: url(../fonts/Fibon_Sans_Regular.otf);
+}
+
+@-webkit-keyframes animateToken {
+    0%{background-color:#b3e5fc;}
+    100%{background-color:#01579b;}
+}
+@-moz-keyframes animateToken {
+    0%{background-color:#b3e5fc;}
+    100%{background-color:#01579b;}
+}
+@keyframes animateToken {
+    0%{background-color:#b3e5fc;}
+    100%{background-color:#01579b;}
+}
+
+body{
+  /*background-color:#F25F5C;*/
+  background-color:#03A9F4;
+}
+
+.input-container{
+  display:block;
+  margin: 0 auto;
+  width:100%;
+}
+
+.input-container p{
+  text-align: center;
+  font-family:fibon;
+  font-size:50px;
+  /*color:#FFE066;*/
+  /*color:#50514F;*/
+  color:#E1F5FE;
+}
+.input-container input{
+  margin:0 auto;
+  display:block;
+}
+.token-container {
+  text-align:center;
+}
+.token-container li {
+  list-style:none;
+  display:inline-flex;
+  width:70px;
+  height:30px;
+  background-color:#B3E5FC;
+  margin:0 5px 0 5px;
+  border-radius: 30px;
+  cursor:pointer;
+}
+#category-token li {
+  width:90px;
+}
+
+.token-container span {
+  width:100%;
+  text-align:center;
+  padding-top:4px;
+  border-radius: 30px;
+}
+.token-container li:hover{
+  -webkit-animation: animateToken 1s ease forwards;
+  -moz-animation: animateToken 1s ease forwards;
+  animation: animateToken 1s ease forwards;
+}
+.chosen-money{
+  background-color:#01579B;
+  color:white;
+}
+.chosen-category{
+  background-color:#0277BD;
+  color:white;
+}
+/*.product-grid{
+  background-color:white;
+  width:100%;
+  height:250px;
+}*/
